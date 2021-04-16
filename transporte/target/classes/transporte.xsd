@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://equipo8.me/transporte" 
+    xmlns:tns="http://equipo8.me" elementFormDefault="qualified">
+
+    <element name="RegistrarAutoRequest">
+        <complexType>
+            <sequence>
+                <element name="placa" type="string"></element>
+                <element name="marca" type="string"></element>
+                <element name="anio" type="int"></element>
+                <element name="asientos" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RegistrarAutoResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+
+    <element name="ListaDeCarrosRequest">
+        <complexType/>
+    </element>
+    <element name="ListaDeCarrosResponse">
+        <complexType>
+            <sequence>
+                <element name="lista" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="id" type="int"></element>
+                                <element name="placa" type="string"></element>
+                                <element name="marca" type="string"></element>
+                                <element name="anio" type="int"></element>
+                                <element name="asientos" type="int"></element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="BorrarCarroRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>       
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BorrarCarroResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+
+    
+    <element name="solicitarRentarCarroRequest">
+        <complexType>
+            <sequence>
+                <element name="nombre" type="string"></element>
+                <element name="licencia" type="string"></element>
+                <element name="tarjeta" type="int"></element>
+                <element name="asientos" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="solicitarRentarCarroResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+
+
+    
+</schema>
