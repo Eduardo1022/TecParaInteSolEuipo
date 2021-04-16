@@ -40,7 +40,7 @@ public class TransporteConfig extends WsConfigurerAdapter {
     DefaultWsdl11Definition wsdl = new DefaultWsdl11Definition ();
     wsdl.setPortTypeName("transportePort");
     wsdl.setLocationUri("/ws/transporte");
-    wsdl.setTargetNamespace("http://www.espiritu.me/transporte");
+    wsdl.setTargetNamespace("http://www.equipo8.me/transporte");
     wsdl.setSchema(transporteSchema);
     return wsdl;
   }

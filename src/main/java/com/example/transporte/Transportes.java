@@ -9,25 +9,28 @@ import javax.persistence.Id;
 public class Transportes {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
     private String marca ;
-    private String modeo;
-    private int anio;
-    private int asientos;
+    
+    private Integer anio;
+    private Integer asientos;
+    private String placa;
 
     
 
+
+
     /**
-     * @return int return the id
+     * @return Integer return the id
      */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -46,45 +49,45 @@ public class Transportes {
     }
 
     /**
-     * @return String return the modeo
+     * @return Integer return the anio
      */
-    public String getModeo() {
-        return modeo;
-    }
-
-    /**
-     * @param modeo the modeo to set
-     */
-    public void setModeo(String modeo) {
-        this.modeo = modeo;
-    }
-
-    /**
-     * @return int return the anio
-     */
-    public int getAnio() {
+    public Integer getAnio() {
         return anio;
     }
 
     /**
      * @param anio the anio to set
      */
-    public void setAnio(int anio) {
+    public void setAnio(Integer anio) {
         this.anio = anio;
     }
 
     /**
-     * @return int return the asientos
+     * @return Integer return the asientos
      */
-    public int getAsientos() {
+    public Integer getAsientos() {
         return asientos;
     }
 
     /**
      * @param asientos the asientos to set
      */
-    public void setAsientos(int asientos) {
+    public void setAsientos(Integer asientos) {
         this.asientos = asientos;
+    }
+
+    /**
+     * @return String return the placa
+     */
+    public String getPlaca() {
+        return placa;
+    }
+
+    /**
+     * @param placa the placa to set
+     */
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
 }
