@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.04.16 a las 02:50:24 PM CDT 
+// Generado el: 2021.04.22 a las 07:03:30 PM CDT 
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://equipo8.me/transporte", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)

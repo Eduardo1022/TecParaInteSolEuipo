@@ -8,10 +8,13 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
+import me.equipo8.transporte.BorrarCarroRequest;
+import me.equipo8.transporte.BorrarCarroResponse;
 import me.equipo8.transporte.RegistrarAutoRequest;
 import me.equipo8.transporte.RegistrarAutoResponse;
 
 // comentaria 
+//otro cometario al azar 
 @Endpoint
 public class TransportesEndPoint {
     @Autowired
@@ -26,7 +29,6 @@ public class TransportesEndPoint {
         respuesta.setRespuesta( peticion.getPlaca());
         respuesta.setRespuesta("se registro el ::::" +peticion.getMarca());
         respuesta.setRespuesta2(peticion.getAnio());
-        
         respuesta.setRespuesta2(peticion.getAsientos());
 
         Transportes carro = new Transportes();
@@ -39,6 +41,24 @@ public class TransportesEndPoint {
 
         return respuesta;
     }
+
+    /////////////////////////////////////////////////borrar
+
+    @PayloadRoot(namespace = "http://equipo8.me/transporte",  localPart ="BorrarCarroRequest")
+  
+    @ResponsePayload
+    public BorrarCarroResponse borraCarro(@RequestPayload BorrarCarroRequest peticion){
+        BorrarCarroResponse respuesta = new BorrarCarroResponse();
+        respuesta.setRespuesta(" se borro el id: " + peticion.getId());
+        //validar qeu no existe
+        itransportes.deleteById(peticion.getId());
+
+        return respuesta;
+    }
+//////////////////////////////////////////////leer
+
+
+///////////////////////////////////////////////Editar
 
     
     
