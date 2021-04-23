@@ -12,6 +12,11 @@ import me.equipo8.transporte.BorrarCarroRequest;
 import me.equipo8.transporte.BorrarCarroResponse;
 import me.equipo8.transporte.RegistrarAutoRequest;
 import me.equipo8.transporte.RegistrarAutoResponse;
+import me.equipo8.transporte.ModificarCarroRequest;
+import me.equipo8.transporte.ModificarCarroResponse;
+import me.equipo8.transporte.ListaDeCarrosRequest;
+import me.equipo8.transporte.ListaDeCarrosResponse;
+
 
 // comentaria 
 //otro cometario al azar 
@@ -19,6 +24,9 @@ import me.equipo8.transporte.RegistrarAutoResponse;
 public class TransportesEndPoint {
     @Autowired
     private Itransportes itransportes;
+
+
+    ///////////////////////////////////agregar/////////////////////
     @PayloadRoot(namespace = "http://equipo8.me/transporte",  localPart ="RegistrarAutoRequest")
   
     @ResponsePayload
@@ -55,11 +63,62 @@ public class TransportesEndPoint {
 
         return respuesta;
     }
-//////////////////////////////////////////////leer
+//////////////////////////////////////////////listar carros/////////////////////
+    @PayloadRoot(namespace = "http://equipo8.me/transporte",  localPart ="ListaDeCarrosRequest")
+    @ResponsePayload
+    public ListaDeCarrosResponse ListaCarros(){
+        ListaDeCarrosResponse respuesta = new ListaDeCarrosResponse();
+        Iterable<Transportes> ListaCarros = itransportes.findAll();
+
+        for(Transportes ls : ListaCarros){
+            ListaDeCarrosResponse.Lista carros = new ListaDeCarrosResponse.Lista(); 
+            
+            carros.setId(ls.getId());
+            carros.setPlaca(ls.getPlaca());
+            carros.setMarca(ls.getMarca());
+            carros.setAnio(ls.getAnio());
+            carros.setAsientos(ls.getAsientos());
+            
+            respuesta.getLista().add(carros);
+        }
+         return respuesta;
+    }
 
 
-///////////////////////////////////////////////Editar
+///////////////////////////////////////////////Modificar//////////////////
 
+   @PayloadRoot(namespace = "http://equipo8.me/transporte",  localPart ="ModificarCarroRequest")
+     @ResponsePayload
+
+    public ModificarCarroResponse modificarCarro(@RequestPayload ModificarCarroRequest peticion){
+        ModificarCarroResponse respuesta = new ModificarCarroResponse(); 
+        Optional<Transportes> r = itransportes.findById(peticion.getId());
+    
+        if(r.isPresent()){
+            Transportes transportes = new Transportes();
+            transportes = r.get();
+            transportes.setId(peticion.getId());
+            transportes.setMarca(peticion.getMarca());
+            transportes.setPlaca(peticion.getPlaca());
+            transportes.setAnio(peticion.getAnio());
+            transportes.setAsientos(peticion.getAsientos());
+            itransportes.save(transportes);
+            respuesta.setRespuesta("\n Se modificaron los datos: "+"\n MARCAR: " + peticion.getMarca()+ 
+                                                                "\n nPLACA: " +  peticion.getPlaca()+
+                                                                "\n AÑO: "+peticion.getAnio()+
+                                                                "\n ASIENTO: "+ peticion.getAsientos() );
+        }else{
+             respuesta.setRespuesta("Id no existe:  " + peticion.getId());
+        }
+        return respuesta;
+
+            
+        
+    }
     
     
 }
+
+
+    
+    

@@ -10,7 +10,6 @@
                 <element name="marca" type="string"></element>
                 <element name="anio" type="int"></element>
                 <element name="asientos" type="int"></element>
-                
             </sequence>
         </complexType>
     </element>
@@ -22,6 +21,16 @@
             </sequence>
         </complexType>
     </element>
+
+
+
+
+
+
+
+
+
+
 
 
     <element name="ListaDeCarrosRequest">
@@ -44,6 +53,11 @@
             </sequence>
         </complexType>
     </element>
+    
+
+
+
+
 
 
     
@@ -64,24 +78,45 @@
     </element>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     
-    <element name="solicitarRentarCarroRequest">
+
+    <element name="ModificarCarroRequest">
         <complexType>
-            <sequence>
-                <element name="nombre" type="string"></element>
-                <element name="licencia" type="string"></element>
-                <element name="tarjeta" type="int"></element>
-                <element name="asientos" type="int"></element>
-            </sequence>
+                <sequence>
+                    <element name="id" type="int"></element>
+                    <element name="marca" type="string"></element>
+                    <element name="anio" type="int"></element>
+                    <element name="asientos" type="int"></element>
+                    <element name="placa" type="string"></element>
+                </sequence>
         </complexType>
     </element>
-    <element name="solicitarRentarCarroResponse">
+    <element name="ModificarCarroResponse">
         <complexType>
             <sequence>
                 <element name="respuesta" type="string"></element>
             </sequence>
         </complexType>
     </element>
+
+
+
+
+
+
+
 
 
 
