@@ -10,15 +10,11 @@ public class Transportes {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String marca ;
     
+    private String marca ;
     private Integer anio;
     private Integer asientos;
     private String placa;
-
-    
-
-
 
     /**
      * @return Integer return the id

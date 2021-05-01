@@ -14,12 +14,10 @@ import me.equipo8.transporte.RegistrarAutoRequest;
 import me.equipo8.transporte.RegistrarAutoResponse;
 import me.equipo8.transporte.ModificarCarroRequest;
 import me.equipo8.transporte.ModificarCarroResponse;
-import me.equipo8.transporte.ListaDeCarrosRequest;
+//import me.equipo8.transporte.ListaDeCarrosRequest;
 import me.equipo8.transporte.ListaDeCarrosResponse;
 
 
-// comentaria 
-//otro cometario al azar 
 @Endpoint
 public class TransportesEndPoint {
     @Autowired

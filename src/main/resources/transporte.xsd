@@ -3,6 +3,12 @@
     targetNamespace="http://equipo8.me/transporte" 
     xmlns:tns="http://equipo8.me" elementFormDefault="qualified">
 
+
+
+
+
+    
+
     <element name="RegistrarAutoRequest">
         <complexType>
             <sequence>
