@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StylePage2.css">
+    <title>Edicion de Autos</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header class="Cabecera">
+        <h1 id="titulo">Editando Transporte</h1>
+    </header>
+    <nav class="menuCSS3">
+		<ul>
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="#">Otras opciones</a>
+				<ul>
+					<li><a href="agregar.html">Agregar Autos</a></li>
+					<li><a href="eliminar.html">Borrar autos</a></li>
+					<li><a href="leer.html">Ver autos</a></li>
+					
+				</ul>
+			</li>
+
+		</ul>
+	</nav>
+    <section  class="form-register">
+        <h3>Editar autos</h3><br>
+        <input class="controls" type="text" name="id" id="id" placeholder="Ingrese la ID">
+        <input class="controls" type="text" name="marca" id="marca" placeholder="Ingrese la Marca">
+        <input class="controls" type="int" name="anio" id="anio" placeholder="Ingrese el Año">
+        <input class="controls" type="int" name="asientos" id="asientos" placeholder="Ingrese N° Asientos">
+        <input class="controls" type="int" name="placa" id="placa" placeholder="ingrese la placa">
+        <input class="botons" type="submit" value="Enviar" onclick="soap()" />
+    </section>
+    <!--<form action="">
+        <label for="id">Id :</label><input type="text" id="id" name="id" /><br />
+        <label for="marca">marca :</label><input type="text" id="marca" name="marca" /><br />
+        <label for="anio">año :</label><input type="text" id="anio" name="anio" /><br />
+        <label for="asientos">asientos :</label><input type="text" id="asientos" name="asientos" /><br />
+        <label for="placa">placa :</label><input type="text" id="placa" name="placa" /><br />
+          <label for="r">resultado:</label><input type="text" id="r" /><br />  
+
+        <input type="button" value="enviar" onclick="soap()" />
+        
+    </form>-->
+    <script src="soapEditar.js"></script>
+    
+</body>
+</html>

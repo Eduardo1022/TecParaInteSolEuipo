@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StylePage2.css">
+    <title>Eliminar Autos</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header class="Cabecera">
+        <h1 id="titulo">Eliminar Transporte</h1>
+    </header>
+    <nav class="menuCSS3">
+		<ul>
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="#">Otras opciones</a>
+				<ul>
+					<li><a href="editar.html">Editar autos</a></li>
+					<li><a href="agregar.html">Agregar autos</a></li>
+					<li><a href="leer.html">Ver autos</a></li>
+					
+				</ul>
+			</li>
+
+		</ul>
+	</nav>
+    <section class="form-register">
+        <h3>Elimninando autos</h3><br>
+        <input class="controls" type="text" name="id" id="id" placeholder="Ingrese el ID">
+        <input class="controls" type="text" name="r" id="r" placeholder="Ingrese la Marca">
+        <input class="botons" type="submit" value="enviar" onclick="soap()" />
+    </section >
+   <!-- <h1>eliminar</h1>
+    <form action="">
+        <label for="id">Borrar carro por Id :</label><input type="text" id="id" name="id" /><br />
+        <label for="r">resultado:</label><input type="text" id="r" /><br />   
+      
+        <input type="button" value="enviar" onclick="soap()" />
+    </form>-->
+    <script src="soapEliminar.js"></script>
+      
+    
+    
+</body>
+</html>
